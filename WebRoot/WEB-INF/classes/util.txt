@@ -1,0 +1,9 @@
+数据库无法插入中文解决方法：
+alter table users modify username char(20) character set gbk;
+insert into role(roleId,roleName,roleKey) values("1","管理员","1");
+
+insert into resc(resId,resName,parentName,parentId,resKey,resUrl)
+values("1","系统功能","","","","AM.view.SystemFunction");
+
+update resc set resKey = 'SystemManager.do',
+resUrl = 'AM.view.SystemManager' where resId = '3';
